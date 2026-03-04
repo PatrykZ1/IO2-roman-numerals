@@ -17,6 +17,8 @@ numeral_map: List[Tuple[int, str]] = [
 ]
 
 def convert(number: int) -> str:
+    if number <= 0 or number > 3999:
+        raise ValueError("number must be in range 1..3999")
 
     n = number
     parts: List[str] = []

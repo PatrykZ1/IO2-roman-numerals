@@ -23,3 +23,8 @@ import numerals
 
 def test_convert_basic(n, expected):
     assert numerals.convert(n) == expected
+
+@pytest.mark.parametrize("wrong", [0, -1, 4000, 5000])
+def test_convert_invalid_range(wrong):
+    with pytest.raises(ValueError):
+        numerals.convert(wrong)
