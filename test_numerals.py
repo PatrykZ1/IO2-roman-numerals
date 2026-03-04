@@ -16,6 +16,9 @@ import numerals
     (500, "D"),
     (900, "CM"),
     (1000, "M"),
+    (1984, "MCMLXXXIV"),
+    (3999, "MMMCMXCIX"),
+    (2024, "MMXXIV"),
 ])
 
 def test_convert_basic(n, expected):
