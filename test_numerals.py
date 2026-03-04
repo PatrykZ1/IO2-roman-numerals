@@ -1,7 +1,6 @@
 import pytest
 import numerals
 
-
 @pytest.mark.parametrize("n, expected", [
     (1, "I"),
     (4, "IV"),
@@ -28,3 +27,7 @@ def test_convert_basic(n, expected):
 def test_convert_invalid_range(wrong):
     with pytest.raises(ValueError):
         numerals.convert(wrong)
+
+def test_convert_type_error():
+    with pytest.raises(TypeError):
+        numerals.convert(3.14)

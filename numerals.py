@@ -1,3 +1,4 @@
+# repozytorium: https://github.com/PatrykZ1/IO2-roman-numerals
 from typing import List, Tuple
 
 numeral_map: List[Tuple[int, str]] = [
@@ -19,7 +20,8 @@ numeral_map: List[Tuple[int, str]] = [
 def convert(number: int) -> str:
     if number <= 0 or number > 3999:
         raise ValueError("number must be in range 1..3999")
-
+    if not isinstance(number, int):
+        raise TypeError("number must be an int")
     n = number
     parts: List[str] = []
     for value, symbol in numeral_map:
